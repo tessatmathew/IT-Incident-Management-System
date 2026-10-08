@@ -1,6 +1,6 @@
 # Enterprise IT Support & Incident Management Platform
 
-[![Python API Tests](https://github.com/tessatmathew/IBM-IT-Incident-Management/actions/workflows/python-tests.yml/badge.svg)](https://github.com/tessatmathew/IBM-IT-Incident-Management/actions/workflows/python-tests.yml)
+[![Python API Tests](https://github.com/tessatmathew/IT-Incident-Management-System/actions/workflows/python-tests.yml/badge.svg)](https://github.com/tessatmathew/IT-Incident-Management-System/actions/workflows/python-tests.yml)
 
 A Python-based REST API for managing IT support incidents, tracking troubleshooting activities, assigning technicians, and documenting issue resolutions.
 
@@ -51,8 +51,8 @@ Built with FastAPI, SQLAlchemy, and SQLite, the platform demonstrates backend de
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/IBM-IT-Incident-Management.git
-cd IBM-IT-Incident-Management
+git clone https://github.com/YOUR-USERNAME/IT-Incident-Management-System.git
+cd IT-Incident-Management-System
 ```
 
 ### 2. Create a virtual environment
