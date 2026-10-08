@@ -12,6 +12,12 @@ A full-stack IT incident management application built with React, Python, FastAP
 
 The application is deployed on Render. Free-tier services may take some time to respond after periods of inactivity.
 
+## Application Screenshots
+
+### Dashboard Overview
+
+![IT Incident Management Dashboard](screenshots/dashboard.png)
+
 ## Overview
 
 This project simulates an enterprise IT service desk environment where technical support teams manage incidents throughout their lifecycle, from initial reporting to resolution.
