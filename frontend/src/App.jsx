@@ -170,9 +170,9 @@ function App() {
 
       const [statsData, ticketsData] = await Promise.all([
 
-        apiRequest('/api/stats'),
+        apiRequest('/stats'),
 
-        apiRequest('/api/tickets'),
+        apiRequest('/tickets'),
 
       ])
 
@@ -378,7 +378,7 @@ function App() {
 
       await apiRequest(
 
-        '/api/tickets',
+        '/tickets',
 
         jsonOptions('POST', payload)
 
@@ -433,7 +433,7 @@ function App() {
 
       const ticketNotes = await apiRequest(
 
-        `/api/tickets/${ticket.id}/notes`
+        `/tickets/${ticket.id}/notes`
 
       )
 
@@ -471,7 +471,7 @@ function App() {
     setSuccess('')
     try {
       const updated = await apiRequest(
-        `/api/tickets/${selectedTicket.id}`,
+        `/tickets/${selectedTicket.id}`,
         jsonOptions('PATCH', payload)
       )
       setSelectedTicket(updated)
@@ -512,7 +512,7 @@ function App() {
 
         updatedTicket = await apiRequest(
 
-          `/api/tickets/${ticketId}/status`,
+          `/tickets/${ticketId}/status`,
 
           jsonOptions('PATCH', {
 
@@ -530,7 +530,7 @@ function App() {
 
         updatedTicket = await apiRequest(
 
-          `/api/tickets/${ticketId}/assign`,
+          `/tickets/${ticketId}/assign`,
 
           jsonOptions('PATCH', {
 
@@ -560,7 +560,7 @@ function App() {
 
         const latestTicket = await apiRequest(
 
-          `/api/tickets/${ticketId}`
+          `/tickets/${ticketId}`
 
         )
 
@@ -619,7 +619,7 @@ function App() {
 
       await apiRequest(
 
-        `/api/tickets/${selectedTicket.id}/notes`,
+        `/tickets/${selectedTicket.id}/notes`,
 
         jsonOptions('POST', {
 
@@ -633,7 +633,7 @@ function App() {
 
       const updatedNotes = await apiRequest(
 
-        `/api/tickets/${selectedTicket.id}/notes`
+        `/tickets/${selectedTicket.id}/notes`
 
       )
 
@@ -689,7 +689,7 @@ function App() {
 
       await apiRequest(
 
-        `/api/tickets/${ticketId}/resolve`,
+        `/tickets/${ticketId}/resolve`,
 
         jsonOptions('POST', {
 
