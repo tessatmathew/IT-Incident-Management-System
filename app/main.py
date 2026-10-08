@@ -27,6 +27,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
+        "https://it-incident-management-frontend.onrender.com",
     ],
     allow_credentials=False,
     allow_methods=["*"],
