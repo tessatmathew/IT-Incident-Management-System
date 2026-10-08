@@ -1,5 +1,7 @@
 # Enterprise IT Support & Incident Management Platform
 
+[![Python API Tests](https://github.com/tessatmathew/IBM-IT-Incident-Management/actions/workflows/python-tests.yml/badge.svg)](https://github.com/tessatmathew/IBM-IT-Incident-Management/actions/workflows/python-tests.yml)
+
 A Python-based REST API for managing IT support incidents, tracking troubleshooting activities, assigning technicians, and documenting issue resolutions.
 
 ## Overview
