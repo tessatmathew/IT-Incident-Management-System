@@ -25,3 +25,27 @@ htmlcov/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Python environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local databases
+*.db
+*.sqlite3
+
+# Frontend dependencies and build files
+node_modules/
+dist/
+frontend/.env
+frontend/.env.local
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example

@@ -44,3 +44,9 @@ class TicketNoteResponse(BaseModel):
 class TicketResolve(BaseModel):
     technician: str
     resolution: str
+
+class TicketUpdate(BaseModel):
+    title: str | None = None
+    description: str | None = None
+    priority: str | None = None
+    category: str | None = None

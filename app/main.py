@@ -10,9 +10,9 @@ from .schemas import (
     TicketAssignment,
     TicketNoteCreate,
     TicketNoteResponse,
-    TicketResolve
+    TicketResolve,
+    TicketUpdate
 )
-
 Base.metadata.create_all(bind=engine)
 
 
@@ -83,6 +83,47 @@ def get_tickets(
         query = query.filter(models.Ticket.category == category)
 
     return query.all()
+
+@app.patch("/tickets/{ticket_id}", response_model=TicketResponse)
+def update_ticket(
+    ticket_id: int,
+    update: TicketUpdate,
+    db: Session = Depends(get_db)
+):
+    ticket = db.query(models.Ticket).filter(
+        models.Ticket.id == ticket_id
+    ).first()
+
+    if ticket is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Ticket not found"
+        )
+
+    update_data = update.model_dump(exclude_unset=True)
+
+    allowed_priorities = ["Low", "Medium", "High", "Critical"]
+
+    if "priority" in update_data:
+        if update_data["priority"] not in allowed_priorities:
+            raise HTTPException(
+                status_code=400,
+                detail="Invalid priority"
+            )
+
+    for field, value in update_data.items():
+        if value is None or not isinstance(value, str) or not value.strip():
+            raise HTTPException(
+                status_code=400,
+                detail=f"{field} cannot be empty"
+            )
+
+        setattr(ticket, field, value.strip())
+
+    db.commit()
+    db.refresh(ticket)
+
+    return ticket
 
 @app.get("/tickets/{ticket_id}", response_model=TicketResponse)
 def get_ticket(ticket_id: int, db: Session = Depends(get_db)):
