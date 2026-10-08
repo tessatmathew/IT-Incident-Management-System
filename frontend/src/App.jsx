@@ -62,7 +62,8 @@ const statusOrder = {
 
 async function apiRequest(url, options = {}) {
 
-  const response = await fetch(`${import.meta.env.VITE_API_URL || ''}${url}`, options)
+  const API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '').replace(/\/api$/, '')
+  const response = await fetch(`${API_URL}${url}`, options)
 
   const data = await response.json().catch(() => null)
 
